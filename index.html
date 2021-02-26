@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <head>
     <script src="expantanum.js"></script>
-
+   <link href="style.css" rel="stylesheet"></link>
 </head>
 <body>
-
+    
     <script type="text/javascript" src="functions.js" ></script>
   
     Clicks:<div id="clicks" style="display:inline-block">0</div>
     Total Gain:<div id="totalonclick" style="display:inline-block">0</div>
-    Forumla:(<div id="addclicks" style="display:inline-block">0</div>*<div id="multiplyclicks" style="display:inline-block">0</div>)<div id="exponentiateclicks" style="display:inline-block">0</div>
+    Forumla:(<div id="addclicks" style="display:inline-block">0</div>*<div id="multiplyclicks" style="display:inline-block">0</div>)^<div id="exponentiateclicks" style="display:inline-block">0</div> 
+  <button style="float: right">Settings</button>
     <br><br>
     <button onclick="Boop()">Click</button>
-    <button onclick="Boop1()">Add Click</button>
-    <button onclick="Boop2()">Multiply Click</button>
-    <button onclick="Boop3()">Exponentiate Click</button>
+    <button onclick="Boop1(0)" id="addclickcost">Add Click</button>
+    <button onclick="Boop2(1)" id="multclickcost">Multiply Click</button>
+    <button onclick="Boop3(2)" id="expclickcost">Exponentiate Click</button>
 
 
 </body>
