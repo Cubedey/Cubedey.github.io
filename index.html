@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <head>
-    <script src="expantanum.js"></script>
+    <script src="basis/expantanum.js" defer></script>
+    <script src="js/keys.js" defer></script>
+    <script src="js/buyables.js" defer></script>
+    <script src="js/choices.js" defer></script>
+    <script src="js/layerbuttons.js" defer></script>
+    <script src="js/functions.js" defer></script>
+    <script src="js/pagelookstuff.js" defer></script>
+    <script src="js/layerstuff.js" defer></script>
+    <script src="js/savestuff.js" defer></script>
+    <script src="js/main.js" defer></script>  
    <link href="style.css" rel="stylesheet"></link>
 </head>
 <body>
-    
-    <script type="text/javascript" src="functions.js" ></script>
-  
-    Clicks:<div id="clicks" style="display:inline-block">0</div>
-    Total Gain:<div id="totalonclick" style="display:inline-block">0</div>
-    Forumla:(<div id="addclicks" style="display:inline-block">0</div>*<div id="multiplyclicks" style="display:inline-block">0</div>)^<div id="exponentiateclicks" style="display:inline-block">0</div> 
-  <button style="float: right">Settings</button>
+    <div id="clickdisplay" style="display:inline">
+    Clicks:<div id="clicksnum" style="display:inline-block">0</div>
+    Total Gain:<div id="totalonclick" style="display:inline-block">1</div>
+    Forumla:<div id="formula" style="display:inline-block">1</div>
+    <button id="layerbutton-Settings" class="layerbuttons" onclick="player.layerbuttons['Settings'].switchtab()" style="float: right">Settings</button>
     <br><br>
-    <button onclick="Boop()">Click</button>
-    <button onclick="Boop1(0)" id="addclickcost">Add Click</button>
-    <button onclick="Boop2(1)" id="multclickcost">Multiply Click</button>
-    <button onclick="Boop3(2)" id="expclickcost">Exponentiate Click</button>
+    <span id="autobuyon">False,</span><span id="shiftbuyon">False</span>
+    <br>
+    <button onclick="clicked()">Click</button>
+    <button id="buyable-Click-1" class="buyable" onclick="player.buyables['Click-1'].buy()"  >Add Click</button>
+    <button id="buyable-Click-2" class="buyable" onclick="player.buyables['Click-2'].buy()">Multiply Click</button>
+    <button id="buyable-Click-3" class="buyable" onclick="player.buyables['Click-3'].buy()">Exponentiate Click</button>
+
+    </div>
+    
+    <div id="settingsoptions" style="display:none">
+        Hallo is settings
+        <button id="layerbutton-Click-Settings" class="layerbuttons" onclick="player.layerbuttons['Click'].switchtab()" style="float: right">Home</button>
+        <br><br>
+        Feel Free to Cheat
+        <button onclick="hardreset()">Hard Reset</button>
+        <button onclick="exportsave()">Export Save</button><input id="exportinput">
+         Copy it over!<button onclick="importsave()">Import Save</button><input id="importinput">
+        <br><br>
+        <button onclick="resetcolors()">Reset Colors</button><button onclick="setcolors()">Import Colors</button> Input custom hex codes for 
+        Background:<input id="backgroundcolor" value="black">
+        Text:<input id="textcolor" value="#39FF14">
+    </div>
+    <div id="prestigedisplay" style="display:none">
+    Welcome! It is prestige time.
+    <button onclick="resetlayer('prestige')" id="prestigebutton">Prestige</button> 
+    Requires: <div id="prestigerequirement" style="display:inline">0</div> Clicks
+
+    <br>
+    Prestige Points: <div id="prestigepoints" style="display:inline">0</div>
+    <br>
+   
+    <button id="choice-Prestige-1" class="choice" onclick="player.choices['Prestige-1'].choose()"></button>
+    <button id="choice-Prestige-2" class="choice" onclick="player.choices['Prestige-2'].choose()"></button>
+    <br>
+    <div id="prestigeupgrades">
+        Upgrades:
+        <br>
+        <button onclick="buyupgrade(0)" id="upgrade:4" style="display:none">Click Buyables Don't Cost Anything</button>
+        <br>
+        <div id="autobuyertext">Autobuyers(Hold A to Toggle Them on And Off):</div>
+        <br>
+        <button id="buyable-Prestige-1" class="buyable" onclick="player.buyables['Prestige-1'].buy()">Multiple Buying</button>
+        <button id="buyable-Prestige-2" class="buyable" onclick="player.buyables['Prestige-2'].buy()">Add Autobuyer</button>
+        <button id="buyable-Prestige-3" class="buyable" onclick="player.buyables['Prestige-3'].buy()">Multiply Autobuyer</button>
+        <button id="buyable-Prestige-4" class="buyable" onclick="player.buyables['Prestige-4'].buy()">Exponent Autobuyer</button>
+        
+    </div>
+    </div>
+    </div>
+    <br><br>
+    <div id="directorybuttons">
+    <button id="layerbutton-Click" class="layerbuttons" onclick="player.layerbuttons['Click'].switchtab()">Home</button>
+    <button id="layerbutton-Prestige" class="layerbuttons" onclick="player.layerbuttons['Prestige'].switchtab()">Prestige</button>
+    <br>
+    <div>
+    <fieldset class="messenger">
+    <legend>Messenger</legend>
+    WelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcome
+</fieldset>
+</div>
+    
 
 
 </body>
 </html> 
 
 <script>
-    setInterval(function() { tick(); }, 1000);
-    load();
-    render();
-    function tick() {
-    render();
-    update()
-    
-}
+  
     </script>

@@ -1,10 +1,24 @@
 button {
-background-color:black;
-border-color: #39FF14;
-color: #39FF14;
+background-color: inherit; 
+border-color: inherit;
+color: inherit;
+--backgroundcolor: black;
+--textcolor:#39FF14;
 }
 body {
-    color:#39FF14;
-    background-color:black;
+    color: var(--textcolor);
+    background-color:var(--backgroundcolor);
+    border-color: var(--textcolor);
+    --backgroundcolor: black;
+    --textcolor:#39FF14;
+}
+.messenger {
+    position:absolute;
+    bottom:0;
+    right:0;
+    height: 100px;
+    width: 720px;
+
+    text-align: left;
 
 }
