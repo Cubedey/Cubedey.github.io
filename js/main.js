@@ -74,7 +74,6 @@ load()
 for (let key of Object.keys(player.buyables)) {
   addDynamicValue("buyable-"+player.buyables[key].id, "innerHTML", () => (player.buyables[key].getbuyableeffect()+' '+player.buyables[key].text+' '+player.buyables[key].getbuyablecost().toFixed(2)+player.buyables[key].currency_name), player.buyables[key].id, "player.buyables")
 }
-addDynamicValue("prestigeupgrades", "innerHTML", ()) 
 
     if (player.loaded==0) {
     player.loaded=1

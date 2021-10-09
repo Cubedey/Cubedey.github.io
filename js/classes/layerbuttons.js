@@ -9,7 +9,6 @@ class LayerButton {
     switchtab() {
         for (let tab in tabs) {
           let z = document.getElementById(tabs[tab])
-          console.log(this.layer)
 
           if (!(tabs.find(element => element == this.layer)==tabs[tab])) {
             z.style.display="none"

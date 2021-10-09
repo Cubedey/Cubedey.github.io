@@ -16,9 +16,10 @@ body {
     position:absolute;
     bottom:0;
     right:0;
-    height: 100px;
-    width: 720px;
-
     text-align: left;
+    height:200px;
+}
 
+.messengerbox {
+    white-space:normal;
 }

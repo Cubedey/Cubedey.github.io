@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
+    <script type="text/javascript" src=http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js></script>
     <script src="basis/expantanum.js" defer></script>
     <script src="js/keys.js" defer></script>
-    <script src="js/buyables.js" defer></script>
-    <script src="js/choices.js" defer></script>
-    <script src="js/layerbuttons.js" defer></script>
+    <script src="js/classes/buyables.js" defer></script>
+    <script src="js/classes/choices.js" defer></script>
+    <script src="js/classes/layerbuttons.js" defer></script>
     <script src="js/functions.js" defer></script>
     <script src="js/pagelookstuff.js" defer></script>
     <script src="js/layerstuff.js" defer></script>
@@ -14,12 +15,12 @@
 </head>
 <body>
     <div id="clickdisplay" style="display:inline">
-    Clicks:<div id="clicksnum" style="display:inline-block">0</div>
-    Total Gain:<div id="totalonclick" style="display:inline-block">1</div>
-    Forumla:<div id="formula" style="display:inline-block">1</div>
+    Clicks: <div id="clicksnum" style="display:inline-block">0</div>
+    Total Gain: <div id="totalonclick" style="display:inline-block">1</div>
+    Forumla: <div id="formula" style="display:inline-block">1</div>
     <button id="layerbutton-Settings" class="layerbuttons" onclick="player.layerbuttons['Settings'].switchtab()" style="float: right">Settings</button>
     <br><br>
-    <span id="autobuyon">False,</span><span id="shiftbuyon">False</span>
+     
     <br>
     <button onclick="clicked()">Click</button>
     <button id="buyable-Click-1" class="buyable" onclick="player.buyables['Click-1'].buy()"  >Add Click</button>
@@ -75,16 +76,19 @@
     <br>
     <div>
     <fieldset class="messenger">
-    <legend>Messenger</legend>
-    WelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcome
+    <legend class="messengerbox">Messenger</legend>
+    <span style="border: 0px solid none; width: 250px; display: block" id="message">
+    </span>
 </fieldset>
 </div>
+
     
 
 
 </body>
+
+
+<script>$('buyable').append(`hi`);</script>
+
 </html> 
 
-<script>
-  
-    </script>

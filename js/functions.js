@@ -48,6 +48,26 @@ function update() {
     render()
   }
  
+function message(actualmessage) {
+messagesplit=actualmessage.split("")
+currentmessage=""
+messagerepeat(actualmessage, messagesplit)
+}
+totalmessage="Hello Everybody!"
+function messagerepeat(actualmessage, messagesplit, iteration=0) {
+  
+  if (typeof currentmessage == 'undefined') {
+    currentmessage=messagesplit[iteration]
+  } else {
+    currentmessage=currentmessage+messagesplit[iteration]
+  }
+  console.log(currentmessage)
+document.getElementById('message').innerHTML =  totalmessage+"\n"+currentmessage
+iteration+=1
+if (currentmessage!==actualmessage) {
+  setTimeout(function(){messagerepeat(actualmessage, messagesplit, iteration)}, 200);
+} else {totalmessage=totalmessage+"\n"+currentmessage}
+}
   
 
 

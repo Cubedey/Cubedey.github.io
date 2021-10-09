@@ -74,14 +74,15 @@ if (eval(this.dynamicValues[dValue].classification+"['"+this.dynamicValues[dValu
  "Click Buyables Don't Cost Anything ",
   "Click Multiple "]
    checkifshown()
-    stagesofformula=[player.buyables['Click-1'].amount.valueOf(),
+    stagesofformula=[
+    player.buyables['Click-1'].amount.valueOf(),
     player.buyables['Click-1'].amount.valueOf()+"*"+player.buyables['Click-2'].amount.valueOf(),
     "("+player.buyables['Click-1'].amount.valueOf()+"*"+player.buyables['Click-2'].amount.valueOf()+")^"+player.buyables['Click-3'].amount.valueOf()]
     resourcechecklist=[player.buyables['Click-1'].amount,player.buyables['Click-2'].amount,player.buyables['Click-3'].amount]
     document.getElementById('clicksnum').innerHTML = player.clicks.toFixed(2)
     for (keyd in stagesofformula) {
         if (resourcechecklist[keyd].gt(1)) {
-       document.getElementById('formula').innerHTML = stagesofformula[keyd]
+       document.getElementById('formula').innerHTML = (stagesofformula[keyd])
       }
     }
     //set classes to html stuff
@@ -101,10 +102,10 @@ if (eval(this.dynamicValues[dValue].classification+"['"+this.dynamicValues[dValu
      document.getElementById("layerbutton-"+player.layerbuttons[layerbutton].id.toString()).style.display =  "none"       
 }
      }
-    document.getElementById('prestigepoints').innerHTML =  player.prestige_points
+    document.getElementById('prestigepoints').innerHTML =  player.prestige_points.toFixed(2)
     document.getElementById('prestigerequirement').innerHTML =  player.prestige_resetbase
 
-    document.getElementById('totalonclick').innerHTML = player.totalonclick
+    document.getElementById('totalonclick').innerHTML = player.totalonclick.toFixed(2)
     /*
     document.getElementById('upgrade:1').innerHTML =  buttonnamelist[3]+getcostbuyables(3)+"p"+" "+geteffectautobuyers(0).div(1000)+"s"
     document.getElementById('upgrade:2').innerHTML =  buttonnamelist[4]+getcostbuyables(4)+"p"+" "+geteffectautobuyers(1).div(1000)+"s"
@@ -113,11 +114,11 @@ if (eval(this.dynamicValues[dValue].classification+"['"+this.dynamicValues[dValu
     document.getElementById('upgrade:5').innerHTML =  buttonnamelist[7]+getcostbuyables(7)+"p"+" "+player.prestige.clickmorebuy+"x"*/
     
     
-
-    document.getElementById('shiftbuyon').innerHTML =  ", ClickMultiple(Shift): "+tenxbuy
-    document.getElementById('autobuyon').innerHTML =  "AutoBuyers(A): "+autobuyon
-
-
+    
+    //document.getElementById('shiftbuyon').innerHTML =  ", ClickMultiple(Shift): "+tenxbuy
+    //document.getElementById('autobuyon').innerHTML =  "AutoBuyers(A): "+autobuyon
+     //<span id="autobuyon">False,</span><span id="shiftbuyon">False</span>
+    document.getElementById('message').innerHTML =  totalmessage
 
   };
 
